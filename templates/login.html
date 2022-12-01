@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Colon Cancer Stage Detector </title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" >
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/loginstyle.css') }}">
+    </head>
+    <body>
+        <div class="banner">
+            <div class="navbar">
+                <img src="{{ url_for('static', filename='images/logo.png')}}" class="logo">
+                <ul>
+                    <li><a href="symptoms.html">Symptoms</a></li>
+                    <li><a href="actions.html">Actions</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="loginbox">
+            <img src="{{ url_for('static', filename='images/avatar.png') }}" class="avatar" >
+            <h1>Login here</h1>
+            <form action="home.html">
+                <p>User name </p>
+                <input required type="text" name="" placeholder="Enter Username">
+                <p>Password </p>
+                <input required type="password" name="" placeholder="Enter password" >
+                <input type="submit" name="" value="Login" >
+            </form>
+        </div>

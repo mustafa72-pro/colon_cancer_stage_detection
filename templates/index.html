@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Colon Cancer Stage Detector </title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" >
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/prediction.css') }}">
+    </head>
+    <body>
+        <div class="banner">
+            <div class="navbar">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" class="logo">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="symptoms.html">Symptoms</a></li>
+                    <li><a href="actions.html">Actions</a></li>
+                </ul>
+            </div>
+        </div>
+    <div class="prediction ">
+            <h1>Fill in the tests results here </h1>
+         <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}" method="post">
+    	<input type="text" name="AGE" placeholder="Age" required="required" />
+        <input type="text" name="SEX" placeholder="Gender" required="required" />
+		<input type="text" name="TOPOGRAPHY" placeholder="Topography" required="required" />
+		<input type="text" name="T" placeholder="T" required="required" />
+        <input type="text" name="N" placeholder="N" required="required" />
+        <input type="text" name="M" placeholder="M" required="required" />
+		<input type="text" name="SURGERY" placeholder="Number of Surgeries" required="required" />
+
+        <button type="submit">Predict</button>
+
+    </form>
+            <h6 class="predText"> {{ prediction_text }}</h6>
+        <br>
+        <br>
+            <p class="predText"> {{ accuracy_text }}</p>
+    </div>
+    </body>
+</html>
